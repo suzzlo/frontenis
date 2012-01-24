@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Played:</b>
+  <%= @game.played %>
+</p>
+
+<p>
+  <b>T1 p1:</b>
+  <%= @game.t1_p1 %>
+</p>
+
+<p>
+  <b>T1 p2:</b>
+  <%= @game.t1_p2 %>
+</p>
+
+<p>
+  <b>T1 points:</b>
+  <%= @game.t1_points %>
+</p>
+
+<p>
+  <b>T2 p1:</b>
+  <%= @game.t2_p1 %>
+</p>
+
+<p>
+  <b>T2 p2:</b>
+  <%= @game.t2_p2 %>
+</p>
+
+<p>
+  <b>T2 points:</b>
+  <%= @game.t2_points %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

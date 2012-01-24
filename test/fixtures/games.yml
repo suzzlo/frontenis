@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  played: 2012-01-24 23:37:37
+  t1_p1: 1
+  t1_p2: 1
+  t1_points: 1
+  t2_p1: 1
+  t2_p2: 1
+  t2_points: 1
+
+two:
+  played: 2012-01-24 23:37:37
+  t1_p1: 1
+  t1_p2: 1
+  t1_points: 1
+  t2_p1: 1
+  t2_p2: 1
+  t2_points: 1
