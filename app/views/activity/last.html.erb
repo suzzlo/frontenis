@@ -1,0 +1,30 @@
+<h1>Last games</h1>
+
+<!--
+<%= link_to "Activity: last", :controller => "activity", :action => "last" %>
+<%= link_to "Activity: all", :controller => "activity", :action => "all" %>
+-->
+
+<% @games.each do |game| %>
+
+	<table border=0>
+		<tr>
+	        <td rowspan='5'><%= game.played %></td>
+	    </tr>
+	    <tr>
+	        <td rowspan='4'> ===> </td>
+	    </tr>
+	    <tr>
+	        <td><%= User.find(game.t1_p1).name %></td>
+	        <td rowspan='2'><h2><%= game.t1_points %></h2></td>
+	        <td rowspan='2'><h2>-</h2></td>
+	        <td rowspan='2'><h2><%= game.t2_points %></h2></td>
+	        <td><%= User.find(game.t2_p1).name %></td>
+	    </tr>
+	    <tr>
+	        <td><%= User.find(game.t1_p2).name %></td>
+	        <td><%= User.find(game.t2_p2).name %></td>
+	    </tr>
+	</table>
+	<br>    
+<% end %>

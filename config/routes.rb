@@ -1,4 +1,8 @@
 Frontenis::Application.routes.draw do
+  get "activity/last"
+
+  get "activity/all"
+
   resources :games
 
   resources :users
@@ -52,7 +56,7 @@ Frontenis::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'static#index'
+  root :to => 'activity#last'
 
   # See how all your routes lay out with "rake routes"
 
