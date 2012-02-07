@@ -5,15 +5,18 @@ Personal web for frontenis games with my Pikutara friends :-)
 
 CHANGELOG
 
+v0.0.5
+	- Added ranking for users
+
 v0.0.4
-  - Added Activity criteria
+	- Added Activity criteria
 
 v0.0.3
-  - Added some design
+	- Added some design
 
 v0.0.2
-  - Added scaffold for Users and Games
+	- Added scaffold for Users and Games
 
 v0.0.1
-  - Static version
+	- Static version
  
