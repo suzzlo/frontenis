@@ -22,7 +22,7 @@ class RankingsController < ApplicationController
   	end
     # try to sort by score
     # TODO esto parece que no esta funcionando :-(
-    @rankings.sort_by {|k,v| v[:score].to_i}.reverse
+    #@rankings.sort_by {|k,v| v[:score].to_i}.reverse
     
   end
 
