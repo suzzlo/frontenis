@@ -13,12 +13,9 @@ def self.statistics(user_id)
 
   	score = efectivity * differential
 
-    # user statistics
-    #   played games
-    #   win
-    #   loose
-    #   efectivity
     @statistics = {
+      :id => user_id,
+      :name => User.find(user_id).name,
 			:score => score, 
 			:played_games => played_games,
 			:winned_games => winned_games, 
