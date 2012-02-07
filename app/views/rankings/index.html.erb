@@ -11,10 +11,10 @@
 		<td>Efectivity (%)</td>
 	</tr>
 
-	<% @rankings.sort_by {|k,v| v[:score].to_i}.reverse.each { |key, value| %>
+	<% @rankings.each { |key, value| %>
 	<tr>
 		<td><%= value[:score] %></td>
-		<td><%= value[:name] %></td>
+		<td><%= link_to value[:name], :controller => 'statistics', :action => 'user', :id => value[:id] %></td>
 		<td><%= value[:played_games] %></td>
 		<td><%= value[:winned_games] %></td>
 		<td><%= value[:loosed_games] %></td>

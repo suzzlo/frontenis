@@ -17,21 +17,13 @@ class RankingsController < ApplicationController
 
   		score = efectivity * differential
 
-		@rankings.store(user.id, {
-			:name => user.name,
-			:score => score, 
-			:played_games => played_games,
-			:winned_games => winned_games, 
-			:loosed_games => loosed_games, 
-			:differential => differential, 
-			:efectivity => efectivity
-			})
+		@rankings.store(user.id, User.statistics(user.id) )
 
-		# try to sort by score
-		# TODO esto parece que no esta funcionando :-(
-		#@rankings.sort_by {|k,v| v[:score].to_i}.reverse
   	end
-
+    # try to sort by score
+    # TODO esto parece que no esta funcionando :-(
+    @rankings.sort_by {|k,v| v[:score].to_i}.reverse
+    
   end
 
 end

@@ -1,2 +1,28 @@
-<h1>Activity#all</h1>
-<p>Find me in app/views/activity/all.html.erb</p>
+<h1>All games</h1>
+
+<% @games.each do |game| %>
+
+	<table border=0>
+		<tr>
+	        <td rowspan='5'><%= game.played %></td>
+	    </tr>
+	    <tr>
+	        <td rowspan='4'> ===> </td>
+	    </tr>
+	    <tr>
+	        <td><%= User.find(game.t1_p1).name %></td>
+	        <td rowspan='2'><h2><%= game.t1_points %></h2></td>
+	        <td rowspan='2'><h2>-</h2></td>
+	        <td rowspan='2'><h2><%= game.t2_points %></h2></td>
+	        <td><%= User.find(game.t2_p1).name %></td>
+	    </tr>
+	    <tr>
+	        <td><%= User.find(game.t1_p2).name %></td>
+	        <td><%= User.find(game.t2_p2).name %></td>
+	    </tr>
+	</table>
+	<br>    
+<% end %>
+
+
+<%= link_to "see just last month games", :controller => "activity", :action => "last" %>

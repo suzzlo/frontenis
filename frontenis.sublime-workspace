@@ -3,10 +3,78 @@
 	{
 		"selected_items":
 		[
+			[
+				"st",
+				"StatisticsController"
+			],
+			[
+				"ra",
+				"rankings"
+			],
+			[
+				"sort",
+				"sort_by"
+			],
+			[
+				"t2_p",
+				"t2_points"
+			],
+			[
+				"t1",
+				"t1_points"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/rankings/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 576,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/rankings_controller.rb",
+			"settings":
+			{
+				"buffer_size": 895,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/activity/last.html.erb",
+			"settings":
+			{
+				"buffer_size": 713,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/activity/all.html.erb",
+			"settings":
+			{
+				"buffer_size": 725,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/statistics/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 181,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 908,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -15,19 +83,43 @@
 		"selected_items":
 		[
 			[
-				"Syn",
-				"Set Syntax: JSON"
+				"git ",
+				"Git: Status"
 			],
 			[
 				"",
-				"File: Save All"
+				"Git: Status"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"Git",
+				"Git: Status"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Pac",
+				"Package Control: Enable Package"
+			],
+			[
+				"Syn",
+				"Set Syntax: JSON"
 			]
 		],
-		"width": 392.0
+		"width": 575.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 139.0
 	},
 	"distraction_free":
 	{
@@ -40,6 +132,27 @@
 	},
 	"file_history":
 	[
+		"/Users/ion/Development/projects/personal/Rails/frontenis/README",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/assets/javascripts/statistics.js.coffee",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/layouts/application.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/models/user.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/controllers/activity_controller.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/controllers/statistics_controller.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/statistics/user.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/controllers/users_controller.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/controllers/rankings_controller.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/statistics/index.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/rankings/index.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/config/routes.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/assets/stylesheets/activity.css.scss",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/activity/last.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/.gitignore",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/assets/stylesheets/application.css",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/db/seeds.rb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/games/index.html.erb",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/Gemfile",
+		"/Users/ion/Development/projects/personal/Rails/frontenis/app/views/static/index.erb",
+		"/Users/ion/Library/Application Support/Sublime Text 2/Packages/untitled",
 		"/Users/ion/Development/projects/personal/test.rb",
 		"/Users/ion/Development/projects/personal/100things/100things.sublime-workspace",
 		"/Users/ion/Development/projects/personal/100things/100things.sublime-project",
@@ -63,6 +176,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<table border='1'>\n		<tr>\n	        <td colspan='4'><%= game.played %></td>\n	    </tr>\n	    <tr>\n	        <td><%= User.find(game.t1_p1).name %></td>\n	        <td rowspan='2'><%= game.t1_points %></td>\n	        <td rowspan='2'><%= game.t2_points %></td>\n	        <td><%= User.find(game.t2_p1).name %></td>\n	    </tr>\n	    <tr>\n	        <td><%= User.find(game.t1_p2).name %></td>\n	        <td><%= User.find(game.t2_p2).name %></td>\n	    </tr>\n	    <tr>\n	        <td></td>\n	        <td><%= link_to 'Show', game %></td>\n	        <td><%= link_to 'Edit', edit_game_path(game) %></td>\n	        <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>\n	    </tr>\n	</table>\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -82,6 +196,168 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/rankings/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/rankings_controller.rb",
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								883,
+								883
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/activity/last.html.erb",
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								664,
+								664
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/activity/all.html.erb",
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/statistics/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								701,
+								701
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -165,6 +441,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 153.0,
+	"side_bar_width": 319.0,
 	"status_bar_visible": true
 }

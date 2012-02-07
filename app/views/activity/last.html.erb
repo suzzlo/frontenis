@@ -1,10 +1,5 @@
 <h1>Last games</h1>
 
-<!--
-<%= link_to "Activity: last", :controller => "activity", :action => "last" %>
-<%= link_to "Activity: all", :controller => "activity", :action => "all" %>
--->
-
 <% @games.each do |game| %>
 
 	<table border=0>
@@ -28,3 +23,6 @@
 	</table>
 	<br>    
 <% end %>
+
+
+<%= link_to "see all games", :controller => "activity", :action => "all" %>
