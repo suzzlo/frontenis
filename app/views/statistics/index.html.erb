@@ -1,0 +1,8 @@
+<h1>Statistics#index</h1>
+
+<h2>Show User Statistics</h2>
+<ul>
+	<% User.all.each do |user| %>
+	<li><%= link_to user.name, :controller => 'statistics', :action => 'user', :id => user.id %></li>
+	<% end %>
+</ul>

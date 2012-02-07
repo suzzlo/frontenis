@@ -1,4 +1,9 @@
 Frontenis::Application.routes.draw do
+
+  get "statistics/index"
+
+  match 'statistics/user/:id' => 'statistics#user'
+
   get "rankings/index"
 
   get "activity/last"

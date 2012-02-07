@@ -1,9 +1,7 @@
 class ActivityController < ApplicationController
 
   def last
-  	@games = Game.find :all
-  		#:conditions =>['played' == '2012/01/31']
-  		#:order => 'played DESC' 
+  	@games = Game.find(:all, :order => 'played DESC', :conditions => ['played >= ?', 2.month.ago.to_date])
 
     respond_to do |format|
       format.html # index.html.erb
