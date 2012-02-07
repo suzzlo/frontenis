@@ -1,0 +1,27 @@
+<h1>Rankings</h1>
+
+<table>
+	<tr>
+		<td>Score</td>
+		<td>Name</td>
+		<td>Played</td>
+		<td>Win</td>
+		<td>Loose</td>
+		<td>Differential</td>
+		<td>Efectivity (%)</td>
+	</tr>
+
+	<% @rankings.sort_by {|k,v| v[:score].to_i}.reverse.each { |key, value| %>
+	<tr>
+		<td><%= value[:score] %></td>
+		<td><%= value[:name] %></td>
+		<td><%= value[:played_games] %></td>
+		<td><%= value[:winned_games] %></td>
+		<td><%= value[:loosed_games] %></td>
+		<td><%= value[:differential] %></td>
+		<td><%= value[:efectivity] %></td>
+	</tr>
+	<% } %>
+
+</table>
+	

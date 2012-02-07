@@ -1,4 +1,6 @@
 Frontenis::Application.routes.draw do
+  get "rankings/index"
+
   get "activity/last"
 
   get "activity/all"
