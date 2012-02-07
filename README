@@ -5,6 +5,10 @@ Personal web for frontenis games with my Pikutara friends :-)
 
 CHANGELOG
 
+v0.0.6
+	- Added simple graph for user statistics
+	- Corrected last activity for just last month games
+
 v0.0.5
 	- Added ranking for users
 
