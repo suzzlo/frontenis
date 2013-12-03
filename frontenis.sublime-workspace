@@ -31,7 +31,7 @@
 			"file": "app/views/rankings/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 576,
+				"buffer_size": 615,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +39,7 @@
 			"file": "app/controllers/rankings_controller.rb",
 			"settings":
 			{
-				"buffer_size": 895,
+				"buffer_size": 896,
 				"line_ending": "Unix"
 			}
 		},
@@ -74,6 +74,22 @@
 				"buffer_size": 908,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1978,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README",
+			"settings":
+			{
+				"buffer_size": 389,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -82,6 +98,10 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"stat",
+				"Git: Status"
+			],
 			[
 				"git ",
 				"Git: Status"
@@ -115,7 +135,7 @@
 				"Set Syntax: JSON"
 			]
 		],
-		"width": 575.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -201,15 +221,15 @@
 					"file": "app/views/rankings/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 576,
+						"buffer_size": 615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								187,
-								187
+								226,
+								226
 							]
 						],
 						"settings":
@@ -228,15 +248,15 @@
 					"file": "app/controllers/rankings_controller.rb",
 					"settings":
 					{
-						"buffer_size": 895,
+						"buffer_size": 896,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								883,
-								883
+								0,
+								0
 							]
 						],
 						"settings":
@@ -296,7 +316,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -351,6 +372,60 @@
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 1978,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "README",
+					"settings":
+					{
+						"buffer_size": 389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -431,11 +506,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": true,
