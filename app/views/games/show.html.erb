@@ -1,40 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Played:</b>
-  <%= @game.played %>
-</p>
+<h1><%= @game.played %></h1>
 
-<p>
-  <b>T1 p1:</b>
-  <%= @game.t1_p1 %>
-</p>
-
-<p>
-  <b>T1 p2:</b>
-  <%= @game.t1_p2 %>
-</p>
-
-<p>
-  <b>T1 points:</b>
-  <%= @game.t1_points %>
-</p>
-
-<p>
-  <b>T2 p1:</b>
-  <%= @game.t2_p1 %>
-</p>
-
-<p>
-  <b>T2 p2:</b>
-  <%= @game.t2_p2 %>
-</p>
-
-<p>
-  <b>T2 points:</b>
-  <%= @game.t2_points %>
-</p>
-
-
+<table>
+    <tr>
+      <td><%= User.find(@game.t1_p1).name %></td>
+      <td rowspan='2'><h2><%= @game.t1_points %></h2></td>
+      <td rowspan='2'><h2>-</h2></td>
+      <td rowspan='2'><h2><%= @game.t2_points %></h2></td>
+      <td><%= User.find(@game.t2_p1).name %></td>
+  </tr>
+  <tr>
+      <td><%= User.find(@game.t1_p2).name %></td>
+      <td><%= User.find(@game.t2_p2).name %></td>
+  </tr>
+</table>
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

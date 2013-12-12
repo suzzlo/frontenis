@@ -11,34 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :played %><br />
-    <%= f.datetime_select :played %>
-  </div>
-  <div class="field">
-    <%= f.label :t1_p1 %><br />
-    <%= f.number_field :t1_p1 %>
-  </div>
-  <div class="field">
-    <%= f.label :t1_p2 %><br />
-    <%= f.number_field :t1_p2 %>
-  </div>
-  <div class="field">
-    <%= f.label :t1_points %><br />
-    <%= f.number_field :t1_points %>
-  </div>
-  <div class="field">
-    <%= f.label :t2_p1 %><br />
-    <%= f.number_field :t2_p1 %>
-  </div>
-  <div class="field">
-    <%= f.label :t2_p2 %><br />
-    <%= f.number_field :t2_p2 %>
-  </div>
-  <div class="field">
-    <%= f.label :t2_points %><br />
-    <%= f.number_field :t2_points %>
-  </div>
+  <table>
+    <tr>
+      <td colspan="5">
+        <div class="field">
+          <%= f.label :played %><br />
+          <%= f.datetime_select :played %>
+        </div>
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :t1_p1 %><br />
+            <%= f.number_field :t1_p1 %>
+        </div>
+        
+      </td>
+      <td rowspan='2'>
+        <h2>
+          <div class="field">
+            <%= f.label :t1_points %><br />
+            <%= f.number_field :t1_points %>
+          </div>
+        </h2>
+      </td>
+      <td rowspan='2'><h2>-</h2></td>
+      <td rowspan='2'>
+        <h2>
+          <div class="field">
+            <%= f.label :t2_points %><br />
+            <%= f.number_field :t2_points %>
+          </div>
+        </h2>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :t2_p1 %><br />
+          <%= f.number_field :t2_p1 %><br />
+        </div>
+      </td>
+  </tr>
+  <tr>
+      <td>
+        <div class="field">
+          <%= f.label :t1_p2 %><br />
+          <%= f.number_field :t1_p2 %><br />
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :t2_p2 %><br />
+          <%= f.number_field :t2_p2 %><br />
+        </div>
+      </td>
+  </tr>
+</table>
+
+  
+  
+  
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
