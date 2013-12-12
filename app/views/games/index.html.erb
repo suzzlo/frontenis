@@ -1,27 +1,35 @@
-<h1>Listing games</h1>
 
+    <% 
+    last_game_date = ''
+    @games.each do |game|
 
-<% @games.each do |game| %>
-<table border='1'>
-    <tr>
-        <td><%= User.find(game.t1_p1).name %></td>
-        <td rowspan='2'><%= game.t1_points %></td>
-        <td rowspan='2'><%= game.t2_points %></td>
-        <td><%= User.find(game.t2_p1).name %></td>
-    </tr>
-    <tr>
-        <td><%= User.find(game.t1_p2).name %></td>
-        <td><%= User.find(game.t2_p2).name %></td>
-    </tr>
-    <tr>
-        <td><%= game.played %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
-    </tr>
+    if last_game_date != game.played.to_date
+        last_game_date = game.played.to_date
+    %>
+        <h2><%=game.played.to_date %></h2>              
+    <% end %>
+
+            <table>
+                <tr>
+                    <td><%= User.find(game.t1_p1).name %></td>
+                    <td rowspan='2'><h2><%= game.t1_points %></h2></td>
+                    <td rowspan='2'><h2>-</h2></td>
+                    <td rowspan='2'><h2><%= game.t2_points %></h2></td>
+                    <td><%= User.find(game.t2_p1).name %></td>
+                </tr>
+                <tr>
+                    <td><%= User.find(game.t1_p2).name %></td>
+                    <td><%= User.find(game.t2_p2).name %></td>
+                </tr>
+                <tr>
+                    <td><%= game.played %></td>
+                    <td><%= link_to 'Show', game %></td>
+                    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+                    <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
+                </tr>
+            </table>    
+        </td>
 <% end %>
-</table>
 
-<br />
 
 <%= link_to 'New Game', new_game_path %>
