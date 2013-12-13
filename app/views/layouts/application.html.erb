@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Frontenis</title>
-  <%= stylesheet_link_tag    "application" %>
+  <link rel="stylesheet" type="text/css" href="<%= asset_path 'application.css' %>">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   
@@ -28,7 +28,7 @@
 	</div>
 
 	<div id="footer">		
-		<p>frontenis 2012 - Pikutara koadrila</p>
+		<p>frontenis - Pikutara koadrila</p>
 	</div>
 
 </body>
