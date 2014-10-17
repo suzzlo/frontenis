@@ -1,8 +1,10 @@
 Frontenis::Application.routes.draw do
 
+  resources :championships
+
   get "statistics/index"
 
-  match 'statistics/user/:id' => 'statistics#user'
+  get 'statistics/user/:id' => 'statistics#user'
 
   get "rankings/index"
 
