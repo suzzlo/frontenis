@@ -11,14 +11,25 @@
     </div>
   <% end %>
 
+
+
   <table>
+    <tr>
+      <td colspan="5">
+        <div class="field">
+          <%= f.label :championship_id %><br />
+          <%= f.number_field :championship_id %>
+        </div>
+
+      </td>
+    </tr>
     <tr>
       <td colspan="5">
         <div class="field">
           <%= f.label :played %><br />
           <%= f.datetime_select :played %>
         </div>
-        
+
       </td>
     </tr>
     <tr>
@@ -27,7 +38,7 @@
           <%= f.label :t1_p1 %><br />
             <%= f.number_field :t1_p1 %>
         </div>
-        
+
       </td>
       <td rowspan='2'>
         <h2>
@@ -69,11 +80,11 @@
   </tr>
 </table>
 
-  
-  
-  
-  
-  
+
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -40,7 +40,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(params[:game])
+    @game = Game.new(game_params)
 
     respond_to do |format|
       if @game.save
@@ -59,7 +59,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
 
     respond_to do |format|
-      if @game.update_attributes(params[:game])
+      if @game.update_attributes(game_params)
         format.html { redirect_to @game, notice: 'Game was successfully updated.' }
         format.json { head :ok }
       else
@@ -79,5 +79,12 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url }
       format.json { head :ok }
     end
+  end
+
+
+  private
+
+  def game_params
+    params.require(:game).permit(:played,:t1_p1,:t1_p2,:t1_points,:t2_p1,:t2_p2,:t2_points,:created_at,:updated_at,:championship_id)
   end
 end
