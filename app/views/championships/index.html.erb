@@ -1,0 +1,27 @@
+<h1>Listing championships</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @championships.each do |championship| %>
+  <tr>
+    <td><%= championship.name %></td>
+    <td><%= championship.start_date %></td>
+    <td><%= championship.finish_date %></td>
+    <td><%= link_to 'Show', championship %></td>
+    <td><%= link_to 'Edit', edit_championship_path(championship) %></td>
+    <td><%= link_to 'Destroy', championship, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Championship', new_championship_path %>
