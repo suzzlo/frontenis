@@ -44,7 +44,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to games_path, notice: 'Game was successfully created.' }
         format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.update_attributes(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to games_path, notice: 'Game was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,9 +81,7 @@ class GamesController < ApplicationController
     end
   end
 
-
-  private
-
+private
   def game_params
     params.require(:game).permit(:played,:t1_p1,:t1_p2,:t1_points,:t2_p1,:t2_p2,:t2_points,:created_at,:updated_at,:championship_id)
   end

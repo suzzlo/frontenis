@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>Frontenis</title>
-  <link rel="stylesheet" type="text/css" href="<%= asset_path 'application.css' %>">
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
+
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
@@ -27,7 +27,7 @@
 		<%= yield %>
 	</div>
 
-	<div id="footer">		
+	<div id="footer">
 		<p>frontenis - Pikutara koadrila</p>
 	</div>
 

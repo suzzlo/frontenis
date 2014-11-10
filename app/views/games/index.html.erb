@@ -1,12 +1,13 @@
+<p id="notice"><%= notice %></p>
 
-    <% 
+    <%
     last_game_date = ''
     @games.each do |game|
 
     if last_game_date != game.played.to_date
         last_game_date = game.played.to_date
     %>
-        <h2><%=game.played.to_date %></h2>              
+        <h2><%=game.played.to_date %></h2>
     <% end %>
 
             <table>
@@ -27,7 +28,7 @@
                     <td><%= link_to 'Edit', edit_game_path(game) %></td>
                     <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
                 </tr>
-            </table>    
+            </table>
         </td>
 <% end %>
 

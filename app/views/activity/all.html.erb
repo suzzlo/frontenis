@@ -1,28 +1,41 @@
-	<% 
+<%= link_to "see just last month games", :controller => "activity", :action => "last" %>
+
+<table>
+	<%
 	last_game_date = ''
 	@games.each do |game|
 
 	if last_game_date != game.played.to_date
 		last_game_date = game.played.to_date
-	%>
-		<h2><%=game.played.to_date %></h2>				
+		%>
+	</tr>
+		<tr>
+			<td>
+				<% played_time = game.played %>
+				<time datetime="<%=played_time.to_date %>" class="icon">
+				  <em><%= played_time.strftime("%A") %></em>
+				  <strong><%= played_time.strftime("%B") %></strong>
+				  <span><%= played_time.day %></span>
+				</time>
+			</td>
 	<% end %>
-
-			<table>
+<td>
+	<table>
 				<tr>
-	        <td><%= User.find(game.t1_p1).name %></td>
-	        <td rowspan='2'><h2><%= game.t1_points %></h2></td>
-	        <td rowspan='2'><h2>-</h2></td>
-	        <td rowspan='2'><h2><%= game.t2_points %></h2></td>
-	        <td><%= User.find(game.t2_p1).name %></td>
-	    </tr>
-	    <tr>
-	        <td><%= User.find(game.t1_p2).name %></td>
-	        <td><%= User.find(game.t2_p2).name %></td>
-	    </tr>
-			</table>	
-		</td>
+					<td colspan='2' style='text-align: center'>
+						<h2><%= game.t1_points %> - <%= game.t2_points %></h2>
+					</td>
+			</tr>
+			<tr>
+				<td><%= User.find(game.t1_p1).name %></td>
+				<td><%= User.find(game.t2_p1).name %></td>
+			</tr>
+			<tr>
+				<td><%= User.find(game.t1_p2).name %></td>
+				<td><%= User.find(game.t2_p2).name %></td>
+			</tr>
+</table>
+</td>
 <% end %>
 
-
-<%= link_to "see just last month games", :controller => "activity", :action => "last" %>
+</table>

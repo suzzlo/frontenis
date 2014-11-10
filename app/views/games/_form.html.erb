@@ -11,74 +11,55 @@
     </div>
   <% end %>
 
-
-
-  <table>
-    <tr>
-      <td colspan="5">
-        <div class="field">
-          <%= f.label :championship_id %><br />
-          <%= f.number_field :championship_id %>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td colspan="5">
-        <div class="field">
-          <%= f.label :played %><br />
-          <%= f.datetime_select :played %>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="field">
-          <%= f.label :t1_p1 %><br />
-            <%= f.number_field :t1_p1 %>
-        </div>
-
-      </td>
-      <td rowspan='2'>
-        <h2>
-          <div class="field">
-            <%= f.label :t1_points %><br />
-            <%= f.number_field :t1_points %>
-          </div>
-        </h2>
-      </td>
-      <td rowspan='2'><h2>-</h2></td>
-      <td rowspan='2'>
-        <h2>
-          <div class="field">
-            <%= f.label :t2_points %><br />
-            <%= f.number_field :t2_points %>
-          </div>
-        </h2>
-      </td>
-      <td>
-        <div class="field">
-          <%= f.label :t2_p1 %><br />
-          <%= f.number_field :t2_p1 %><br />
-        </div>
-      </td>
+<table>
+  <tr>
+    <td>
+      <div class="field">
+          <%= f.collection_select :championship_id, Championship.order(start_date: :desc), :id, :name, {} %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.label :played %><br />
+        <%= f.datetime_select :played %>
+      </div>
+    </td>
+    <td>
+<table>
+  <tr>
+    <td>TEAM 1</td>
+    <td>TEAM 2</td>
   </tr>
   <tr>
-      <td>
-        <div class="field">
-          <%= f.label :t1_p2 %><br />
-          <%= f.number_field :t1_p2 %><br />
-        </div>
-      </td>
-      <td>
-        <div class="field">
-          <%= f.label :t2_p2 %><br />
-          <%= f.number_field :t2_p2 %><br />
-        </div>
-      </td>
+    <td>
+      <div class="field">
+        <%= f.number_field :t1_points %>
+      </div>
+      <div class="field">
+        <%= f.collection_select :t1_p1, User.order(:name), :id, :name, { :prompt => 'Select player'} %>
+      </div>
+      <div class="field">
+        <%= f.collection_select :t1_p2, User.order(:name), :id, :name, { :prompt => 'Select player'} %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.number_field :t2_points %>
+      </div>
+      <div class="field">
+        <%= f.collection_select :t2_p1, User.order(:name), :id, :name, { :prompt => 'Select player'} %>
+      </div>
+      <div class="field">
+        <%= f.collection_select :t2_p2, User.order(:name), :id, :name, { :prompt => 'Select player'} %>
+      </div>
+    </td>
   </tr>
 </table>
+    </td>
+  </tr>
+</table>
+
+
+
 
 
 
