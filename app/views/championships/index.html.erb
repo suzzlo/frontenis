@@ -2,22 +2,20 @@
 
 
 <% @championships.each do |championship| %>
-<ul class="nav nav-pills">
-<!--
-  <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
-  <li><a href="#">Profile <span class="badge"></span></a></li>
--->
-  <li><%= championship.start_date %></li>
-  <li><%= championship.finish_date %></li>
-  <li><%= championship.name %></li>
-  <li>Asignados <span class="badge"><%= championship.games.size %></span></li>
-  <li>Deberian estar Asignados <span class="badge">
-    <%=
-      Game.where("played >= :start AND played <= :finish", {:start => championship.start_date, :finish => championship.finish_date }) .all.size
-    %>
-    </span>
-  </li>
-</ul>
+  <p>
+    <span><%= championship.start_date %></span>
+    <span><%= championship.finish_date %></span>
+    <span><%= championship.name %></span>
+
+    Not Asigned!!!!
+      <ul>
+        <% Game.where("played >= :start AND played <= :finish", {:start => championship.start_date, :finish => championship.finish_date }).each do |game| %>
+          <% if championship.id != game.championship_id %>
+          <li><%= link_to game.id, game %> - <%= game.played %></li>
+          <% end %>
+        <% end %>
+      </ul>
+</p>
 <% end %>
 
 
