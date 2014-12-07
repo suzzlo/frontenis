@@ -11,7 +11,28 @@
       <ul>
         <% Game.where("played >= :start AND played <= :finish", {:start => championship.start_date, :finish => championship.finish_date }).each do |game| %>
           <% if championship.id != game.championship_id %>
-          <li><%= link_to game.id, game %> - <%= game.played %></li>
+
+          <%= form_for(game) do |f| %>
+
+
+          <table>
+            <tr>
+              <td>
+                <%= link_to game.id, game %>
+              </td>
+              <td>
+                <%= game.played %>
+              </td>
+              <td>
+                  <%= f.collection_select :championship_id, Championship.order(start_date: :desc), :id, :name, {} %>
+              </td>
+              <td>
+                <%= f.submit %>
+              </td>
+            </tr>
+          </table>
+          <% end %>
+
           <% end %>
         <% end %>
       </ul>
