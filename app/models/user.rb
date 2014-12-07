@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 def self.statistics(user_id, championship_id)
 
 		if championship_id
-			@played_games = Game.where("t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id AND championship_id = :championship_id", {:id => user_id, :championship_id => championship_id}).all
+			@played_games = Game.where("(t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id) AND championship_id = :championship_id", {:id => user_id, :championship_id => championship_id}).all
 			@win_games = Game.where("(((t1_p1 = :id OR t1_p2 = :id) AND t1_points > t2_points) OR ((t2_p1 = :id OR t2_p2 = :id) AND t1_points < t2_points))  AND championship_id = :championship_id", {:id => user_id, :championship_id => championship_id}).all
 		else
 			@played_games = Game.where("t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id", {:id => user_id}).all
