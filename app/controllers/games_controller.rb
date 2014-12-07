@@ -2,7 +2,14 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    
+    @championships = Championship.order(start_date: :desc)
+
+    if params[:championship_id]
+      @games = Game.where("championship_id = ?", params[:championship_id])
+    else
+      @games = Game.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

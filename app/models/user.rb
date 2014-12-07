@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
 
-def self.statistics(user_id)
+def self.statistics(user_id, championship_id)
 
-	@played_games = Game.where("t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id", {:id => user_id}).all
-  	@win_games = Game.where("((t1_p1 = :id OR t1_p2 = :id) AND t1_points > t2_points) OR ((t2_p1 = :id OR t2_p2 = :id) AND t1_points < t2_points)", {:id => user_id}).all
+		if championship_id
+			@played_games = Game.where("t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id AND championship_id = :championship_id", {:id => user_id, :championship_id => championship_id}).all
+			@win_games = Game.where("(((t1_p1 = :id OR t1_p2 = :id) AND t1_points > t2_points) OR ((t2_p1 = :id OR t2_p2 = :id) AND t1_points < t2_points))  AND championship_id = :championship_id", {:id => user_id, :championship_id => championship_id}).all
+		else
+			@played_games = Game.where("t1_p1 = :id OR t1_p2 = :id OR t2_p1 = :id OR t2_p2 = :id", {:id => user_id}).all
+			@win_games = Game.where("((t1_p1 = :id OR t1_p2 = :id) AND t1_points > t2_points) OR ((t2_p1 = :id OR t2_p2 = :id) AND t1_points < t2_points)", {:id => user_id}).all
+		end
 
   	played_games = @played_games.size
   	winned_games = @win_games.size
@@ -16,11 +21,11 @@ def self.statistics(user_id)
     @statistics = {
       :id => user_id,
       :name => User.find(user_id).name,
-			:score => score, 
+			:score => score,
 			:played_games => played_games,
-			:winned_games => winned_games, 
-			:loosed_games => loosed_games, 
-			:differential => differential, 
+			:winned_games => winned_games,
+			:loosed_games => loosed_games,
+			:differential => differential,
 			:efectivity => efectivity
 			}
   end

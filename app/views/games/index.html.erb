@@ -1,36 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-    <%
-    last_game_date = ''
-    @games.each do |game|
+  <div class="col-md-9">
 
-    if last_game_date != game.played.to_date
-        last_game_date = game.played.to_date
-    %>
-        <h2><%=game.played.to_date %></h2>
-    <% end %>
+    <table style="cellspacing:200px">
+      <%
+      last_game_date = ''
+      @games.each do |game|
 
+        if last_game_date != game.played.to_date
+          last_game_date = game.played.to_date
+          %>
+        </tr>
+        <tr>
+          <td>
+            <% played_time = game.played %>
+            <time datetime="<%=played_time.to_date %>" class="icon">
+              <em><%= played_time.strftime("%A") %></em>
+              <strong><%= played_time.strftime("%B") %></strong>
+              <span><%= played_time.day %></span>
+            </time>
+          </td>
+          <% end %>
+          <td>
             <table>
-                <tr>
-                    <td><%= User.find(game.t1_p1).name %></td>
-                    <td rowspan='2'><h2><%= game.t1_points %></h2></td>
-                    <td rowspan='2'><h2>-</h2></td>
-                    <td rowspan='2'><h2><%= game.t2_points %></h2></td>
-                    <td><%= User.find(game.t2_p1).name %></td>
-                </tr>
-                <tr>
-                    <td><%= User.find(game.t1_p2).name %></td>
-                    <td><%= User.find(game.t2_p2).name %></td>
-                </tr>
-                <tr>
-                    <td><%= game.played %></td>
-                    <td><%= link_to 'Show', game %></td>
-                    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-                    <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
-                </tr>
+              <tr>
+                <td colspan='2' style='text-align: center'>
+                  <h2><%= game.t1_points %> - <%= game.t2_points %></h2>
+                </td>
+              </tr>
+              <tr>
+                <td><%= User.find(game.t1_p1).name %></td>
+                <td><%= User.find(game.t2_p1).name %></td>
+              </tr>
+              <tr>
+                <td><%= User.find(game.t1_p2).name %></td>
+                <td><%= User.find(game.t2_p2).name %></td>
+              </tr>
             </table>
-        </td>
-<% end %>
+          </td>
+          <% end %>
 
+        </table>
 
-<%= link_to 'New Game', new_game_path %>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Championships (<%= link_to 'All', controller: "games", action: "index"%>)
+      </div>
+      <div class="panel-body">
+        <% @championships.each do |cs| %>
+        <p>
+          <%= link_to cs.name, controller: "games", action: "index", championship_id: cs.id %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>

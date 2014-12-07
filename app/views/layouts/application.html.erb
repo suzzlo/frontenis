@@ -11,17 +11,32 @@
 </head>
 <body>
 
-	<div id="header">
-		frontenis pikutara
-	</div>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <%= link_to "Frontenis Pikutara", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "Games", :controller => "games" %>
+        </li>
+        <li>
+          <%= link_to "Ranking", :controller => "rankings" %>
+        </li>
+        <li>
+          <%= link_to "Statistics", :controller => "statistics" %>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-	<div id="nav">
-		<div id="menu">
-			<%= link_to "Activity", :controller => "activity", :action => "last" %> |
-			<%= link_to "Ranking", :controller => "rankings" %> |
-			<%= link_to "Statistics", :controller => "statistics" %>
-		</div>
-	</div>
+
+<% if notice %>
+  <div class="alert alert-dismissable alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
 
 	<div id="page">
 		<%= yield %>

@@ -1,41 +1,70 @@
+
+	<div class="row">
+
+		<div class="col-md-9">
+
+			<table>
+				<%
+				last_game_date = ''
+				@games.each do |game|
+
+					if last_game_date != game.played.to_date
+						last_game_date = game.played.to_date
+						%>
+					</tr>
+					<tr>
+						<td>
+							<% played_time = game.played %>
+							<time datetime="<%=played_time.to_date %>" class="icon">
+								<em><%= played_time.strftime("%A") %></em>
+								<strong><%= played_time.strftime("%B") %></strong>
+								<span><%= played_time.day %></span>
+							</time>
+						</td>
+						<% end %>
+						<td>
+							<table>
+								<tr>
+									<td colspan='2' style='text-align: center'>
+										<h2><%= game.t1_points %> - <%= game.t2_points %></h2>
+									</td>
+								</tr>
+								<tr>
+									<td><%= User.find(game.t1_p1).name %></td>
+									<td><%= User.find(game.t2_p1).name %></td>
+								</tr>
+								<tr>
+									<td><%= User.find(game.t1_p2).name %></td>
+									<td><%= User.find(game.t2_p2).name %></td>
+								</tr>
+							</table>
+						</td>
+						<% end %>
+
+					</table>
+
+
+		</div>
+
+		<div class="col-md-3">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Championships (<%= link_to 'All', controller: "activity", action: "all"%>)
+				</div>
+				<div class="panel-body">
+						<% @championships.each do |cs| %>
+							<p>
+								<%= link_to cs.name, controller: "activity", action: "all", championship_id: cs.id %>
+							</p>
+						<% end %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
 <%= link_to "see just last month games", :controller => "activity", :action => "last" %>
-
-<table>
-	<%
-	last_game_date = ''
-	@games.each do |game|
-
-	if last_game_date != game.played.to_date
-		last_game_date = game.played.to_date
-		%>
-	</tr>
-		<tr>
-			<td>
-				<% played_time = game.played %>
-				<time datetime="<%=played_time.to_date %>" class="icon">
-				  <em><%= played_time.strftime("%A") %></em>
-				  <strong><%= played_time.strftime("%B") %></strong>
-				  <span><%= played_time.day %></span>
-				</time>
-			</td>
-	<% end %>
-<td>
-	<table>
-				<tr>
-					<td colspan='2' style='text-align: center'>
-						<h2><%= game.t1_points %> - <%= game.t2_points %></h2>
-					</td>
-			</tr>
-			<tr>
-				<td><%= User.find(game.t1_p1).name %></td>
-				<td><%= User.find(game.t2_p1).name %></td>
-			</tr>
-			<tr>
-				<td><%= User.find(game.t1_p2).name %></td>
-				<td><%= User.find(game.t2_p2).name %></td>
-			</tr>
-</table>
-</td>
-<% end %>
-
-</table>

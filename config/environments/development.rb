@@ -31,6 +31,6 @@ Frontenis::Application.configure do
   config.assets.debug = true
 
   # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  # config.active_record.mass_assignment_sanitizer = :strict
 
 end
