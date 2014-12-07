@@ -5,8 +5,9 @@ class StatisticsController < ApplicationController
   def user
 
   	@player = User.find(params[:id])
+    @championships = Championship.order(start_date: :desc)
 
-  	@player_statistics = User.statistics(@player.id)
+  	@player_statistics = User.statistics(@player.id, params[:championship_id])
 
   end
 
