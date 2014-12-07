@@ -20,5 +20,3 @@ gem 'rails_12factor'
 
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
-
-gem 'chartist_js'
